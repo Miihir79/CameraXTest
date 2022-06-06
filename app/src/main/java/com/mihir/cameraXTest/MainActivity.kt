@@ -14,7 +14,12 @@ import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.zxing.*
+import com.google.zxing.common.HybridBinarizer
 import com.mihir.cameraXTest.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
 import java.util.*
@@ -39,13 +44,7 @@ class MainActivity : AppCompatActivity() {
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
 
-        // Set up the listeners for take photo and video capture buttons
-        binding.imageCaptureButton.setOnClickListener { takePhoto() }
-        //binding.videoCaptureButton.setOnClickListener { captureVideo() }
-
         cameraExecutor = Executors.newSingleThreadExecutor()
-
-
 
     }
     private class LuminosityAnalyzer(private val listener: LumaListener) : ImageAnalysis.Analyzer {
@@ -60,11 +59,30 @@ class MainActivity : AppCompatActivity() {
         override fun analyze(image: ImageProxy) {
 
             val buffer = image.planes[0].buffer
-            val data = buffer.toByteArray()
-            val pixels = data.map { it.toInt() and 0xFF }
-            val luma = pixels.average()
+            val bytes = buffer.toByteArray()
+            val source = PlanarYUVLuminanceSource(
+                bytes, image.width,image.height,0,0,
+                image.width,image.height,false
+            )
+            val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
+            var scanned = ""
+            try {
+                val result = MultiFormatReader().apply {
+                    setHints(mapOf(
+                        DecodeHintType.POSSIBLE_FORMATS to arrayListOf(
+                        BarcodeFormat.QR_CODE
+                    )))
+                }.decode(binaryBitmap)
+                scanned = result.text
+                Log.i("TAG", "analyze: ${result.text}")
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+            finally {
+                image.close()
+            }
 
-            listener(luma)
+            listener(scanned)
 
             image.close()
         }
@@ -131,8 +149,13 @@ class MainActivity : AppCompatActivity() {
             val imageAnalyzer = ImageAnalysis.Builder()
                 .build()
                 .also {
-                    it.setAnalyzer(cameraExecutor, LuminosityAnalyzer { luma ->
-                        Log.d(TAG, "Average luminosity: $luma")
+                    it.setAnalyzer(cameraExecutor, LuminosityAnalyzer {
+                        CoroutineScope(Dispatchers.Main).launch {
+                            val text = "QR says:$it"
+                            binding.textView.text = text
+                        }
+
+                        Log.d(TAG, "QR says: $it")
                     })
                 }
 
@@ -192,4 +215,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-typealias LumaListener = (luma: Double) -> Unit
+typealias LumaListener = (luma: String) -> Unit
