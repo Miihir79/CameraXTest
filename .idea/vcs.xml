@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BirdsRecognition" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BookMyShowclone" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Compose" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CryptoCurrency" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DrawingApp2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DrawingCanvas" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Flutter/DictionaryApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Flutter/subcriptionsApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Flutter/untitled" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Hyrasignin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ImageSurfingApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MeraList-1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MyApplication" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Mynewsapp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/NetworkMonitoringLibrary" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Notes-MVVM" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Podcast" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QRcodescanner" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Qalculator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuizApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuizApp-1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RecyclerViewExample-ASJ" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Seatizen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Seatizen_PCS_firestore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Seatizen_firebase" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Sharingapp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpotifyClone" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Suno" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TickTockClone" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/VBIX_eCommerce" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android/app/src/main/cpp/third-party/bloom_cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android/app/src/main/cpp/third-party/bloom_cpp/third-party/catch2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android/submodules/autofill" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android/submodules/privacy-grade" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cameraapp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/getting_data_fromApi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/josh-skills" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/meraList" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testForLibrary" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/textFromImage" vcs="Git" />
+  </component>
+</project>
