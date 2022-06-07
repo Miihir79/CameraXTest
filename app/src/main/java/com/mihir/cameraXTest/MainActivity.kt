@@ -151,8 +151,10 @@ class MainActivity : AppCompatActivity() {
                 .also {
                     it.setAnalyzer(cameraExecutor, LuminosityAnalyzer {
                         CoroutineScope(Dispatchers.Main).launch {
-                            val text = "QR says:$it"
-                            binding.textView.text = text
+                            val text = it
+                            if (text!=""){ // to keep the text persistent
+                                binding.textView.text = text
+                            }
                         }
 
                         Log.d(TAG, "QR says: $it")
