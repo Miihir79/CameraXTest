@@ -39,6 +39,7 @@
                     android:text="QR says:"
                     android:textSize="16sp"
                     android:autoLink="web"
+                    android:paddingHorizontal="1dp"
                     android:linksClickable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

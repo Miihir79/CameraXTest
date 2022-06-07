@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.HapticFeedbackConstants
 import android.widget.Toast
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -154,6 +155,7 @@ class MainActivity : AppCompatActivity() {
                             val text = it
                             if (text!=""){ // to keep the text persistent
                                 binding.textView.text = text
+                                binding.textView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
                             }
                         }
 
